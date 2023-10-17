@@ -5,11 +5,14 @@ on:
         branches: [ devops ]
     workflow_dispatch:
 
+permissions:
+    contents: read
+
 jobs:
     build:
         runs-on: ubuntu-latest
-        permissions:
-            checks: write
+        #permissions:
+        #    checks: write
         steps:
             - uses: actions/checkout@v2
             - name: Set up Python 3.8
